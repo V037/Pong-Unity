@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//credits: V.037_
+
 public class pong_ball : MonoBehaviour
 {
     [SerializeField] private bool started = false;
