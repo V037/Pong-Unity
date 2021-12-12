@@ -50,18 +50,17 @@ public class pong_ball : MonoBehaviour
             speed *= 1.0001f;
             rb.velocity = rb.velocity.normalized * speed;
             v3 = rb.velocity;
-        }
+                if(Mathf.Abs(v3.z) <  speed / space)
+            {
+                v3.z *= 2;
+                rb.AddForce (v3 * Time.deltaTime, ForceMode.Impulse);
+            }
 
-        if(started && Mathf.Abs(v3.z) <  speed / space)
-        {
-            v3.z *= 2;
-            rb.AddForce (v3 * Time.deltaTime, ForceMode.Impulse);
-        }
-
-        if(started && Mathf.Abs(v3.x) <  speed / space)
-        {
-            v3.x *= 2;
-            rb.AddForce (v3 * Time.deltaTime, ForceMode.Impulse);
+            if(Mathf.Abs(v3.x) <  speed / space)
+            {
+                v3.x *= 2;
+                rb.AddForce (v3 * Time.deltaTime, ForceMode.Impulse);
+            }
         }
     }
 }
